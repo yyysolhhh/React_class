@@ -8,16 +8,17 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
   const root = document.getElementById("root");
+
   let counter = 0;
 
   function countUp() {
     counter = counter + 1;
-    render();
+    // render();
   }
 
-  function render() {
-    ReactDOM.render(<Container />, root);
-  }
+  // function render() {
+  //   ReactDOM.render(<App />, root);
+  // }
 
   // const h3 = React.createElement(
   //   "h3",
@@ -42,7 +43,6 @@
   //   );
   // }
 
-
   // const btn = React.createElement(
   //   "button",
   //   {
@@ -65,21 +65,22 @@
   //   </button>
   // );
 
-
   // const container = React.createElement("div", null, [Title, Button]);
-  function Container() {
+  function App() {
     // <div>
     //   <Title />
     //   <Button />
     // </div>
+    const [counter, modifier] = React.useState(0);
     return (
       <div>
         <h3>Total clicks: {counter}</h3>
-        <button onClick={countUp}>Click me</button>
+        <button>Click me</button>
       </div>
     );
   }
 
-  render();
+  // render();
+  ReactDOM.render(<App />, root);
 </script>
 </html>
